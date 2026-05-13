@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSA DIGITAL | Sites de Alta Performance & Identidade Visual em Patos de Minas</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind & GSAP -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#050505',
+                        card: '#0c0c0c',
+                        accent: '#ffffff',
+                        gold: '#D4AF37'
+                    },
+                    fontFamily: {
+                        display: ['Syne', 'sans-serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { background-color: #050505; color: #ffffff; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+        .glass { background: rgba(12, 12, 12, 0.8); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .bento-card { background: #0c0c0c; border: 1px solid rgba(255, 255, 255, 0.04); transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1); }
+        .bento-card:hover { border-color: rgba(255, 255, 255, 0.2); transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+        .text-gradient { background: linear-gradient(to right, #fff, #a1a1aa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero-glow { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 100%; height: 600px; background: radial-gradient(circle at 50% 0%, rgba(255,255,255,0.08) 0%, transparent 70%); pointer-events: none; }
+        .btn-shine { position: relative; overflow: hidden; }
+        .btn-shine::after { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent); transform: rotate(45deg); transition: 0.7s; }
+        .btn-shine:hover::after { left: 120%; }
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: #050505; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
+    </style>
+</head>
+<body class="font-sans">
+
+    <!-- HEADER -->
+    <header class="fixed top-0 w-full z-50 px-6 py-6">
+        <nav class="max-w-6xl mx-auto flex justify-between items-center glass px-8 py-4 rounded-full border border-white/10">
+            <div class="flex flex-col">
+                <span class="text-xl font-display font-extrabold tracking-tighter leading-none">JSA <span class="text-white/50">DIGITAL</span></span>
+                <span class="text-[8px] uppercase tracking-[0.3em] text-white/40 mt-1">Patos de Minas, MG</span>
+            </div>
+            <div class="hidden md:flex gap-10 text-[11px] font-bold uppercase tracking-widest text-white/70">
+                <a href="#servicos" class="hover:text-white transition">Soluções</a>
+                <a href="#metodo" class="hover:text-white transition">Diferenciais</a>
+                <a href="#contato" class="hover:text-white transition">Contato</a>
+            </div>
+            <a href="https://wa.me/5534991775379" target="_blank" class="bg-white text-black px-6 py-2.5 rounded-full text-[11px] font-black tracking-widest uppercase btn-shine">WhatsApp</a>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative min-h-screen flex items-center justify-center pt-20 px-6">
+        <div class="hero-glow"></div>
+        <div class="max-w-5xl mx-auto text-center relative z-10">
+            <div class="inline-flex items-center gap-2 px-4 py-2 border border-white/10 rounded-full bg-white/5 mb-8 reveal-hero">
+                <div class="flex text-yellow-500 text-xs">★★★★★</div>
+                <span class="text-[10px] font-bold uppercase tracking-widest">Nota 5.0 no Google por nossos clientes</span>
+            </div>
+            <h1 class="text-5xl md:text-8xl font-display font-extrabold tracking-tighter leading-[0.9] mb-8 reveal-hero">
+                CRIAMOS <span class="text-gradient">AUTORIDADE</span> <br> DIGITAL PARA SUA MARCA.
+            </h1>
+            <p class="text-lg md:text-xl text-white/50 max-w-2xl mx-auto mb-12 reveal-hero leading-relaxed font-light">
+                Sites de alta performance e identidades visuais exclusivas em Patos de Minas para empresas que desejam crescer, converter e dominar o mercado local.
+            </p>
+            <div class="flex flex-col md:flex-row gap-6 justify-center items-center reveal-hero">
+                <a href="https://wa.me/5534991775379" class="bg-white text-black px-12 py-6 rounded-2xl font-black text-sm uppercase tracking-widest btn-shine w-full md:w-auto">Quero um site profissional</a>
+                <a href="#servicos" class="px-12 py-6 rounded-2xl font-bold text-sm border border-white/10 hover:bg-white/5 transition w-full md:w-auto uppercase tracking-widest">Ver Portfólio</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROVA SOCIAL MARQUEE -->
+    <div class="py-10 border-y border-white/5 bg-[#080808] overflow-hidden whitespace-nowrap">
+        <div class="flex gap-20 animate-marquee text-[11px] font-bold uppercase tracking-[0.4em] text-white/20">
+            <span>Sites Profissionais</span><span>•</span><span>Identidade Visual</span><span>•</span><span>Páginas de Vendas</span><span>•</span><span>Design Estratégico</span><span>•</span><span>Patos de Minas - MG</span><span>•</span><span>Google 5 Estrelas</span><span>•</span><span>Suporte VIP</span><span>•</span>
+            <span>Sites Profissionais</span><span>•</span><span>Identidade Visual</span><span>•</span><span>Páginas de Vendas</span><span>•</span><span>Design Estratégico</span><span>•</span><span>Patos de Minas - MG</span><span>•</span><span>Google 5 Estrelas</span><span>•</span><span>Suporte VIP</span><span>•</span>
+        </div>
+    </div>
+
+    <!-- DIFERENCIAIS BENTO GRID -->
+    <section id="metodo" class="py-32 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-20">
+            <h2 class="text-3xl md:text-5xl font-display font-bold mb-6 reveal">Por que escolher a <span class="text-white/40">JSA Digital?</span></h2>
+            <p class="text-white/50 max-w-xl mx-auto reveal">Combinamos estética de luxo com estratégias de vendas validadas.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+            <!-- Card 1 -->
+            <div class="bento-card md:col-span-8 p-12 rounded-[2.5rem] relative overflow-hidden group reveal">
+                <div class="relative z-10 flex flex-col h-full justify-between">
+                    <div>
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-white/40 mb-4 block">Foco em Performance</span>
+                        <h3 class="text-3xl font-display font-bold mb-6 max-w-md leading-tight">Sites que não são apenas bonitos, mas que vendem 24h por dia.</h3>
+                    </div>
+                    <p class="text-white/40 text-sm max-w-sm">Integração estratégica com WhatsApp e redes sociais para maximizar seus lucros.</p>
+                </div>
+                <div class="absolute top-0 right-0 p-8 text-6xl opacity-10 group-hover:rotate-12 transition-transform">🚀</div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bento-card md:col-span-4 p-10 rounded-[2.5rem] reveal">
+                <div class="text-3xl mb-6">💎</div>
+                <h3 class="text-xl font-bold mb-4">Design Premium</h3>
+                <p class="text-white/40 text-sm leading-relaxed">Identidade visual alinhada com o perfil da sua marca para transmitir total confiança ao seu cliente.</p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bento-card md:col-span-4 p-10 rounded-[2.5rem] reveal">
+                <div class="text-3xl mb-6">📍</div>
+                <h3 class="text-xl font-bold mb-4">Especialista Local</h3>
+                <p class="text-white/40 text-sm leading-relaxed">Sediada em Patos de Minas, conhecemos o público da região e sabemos o que funciona aqui.</p>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="bento-card md:col-span-8 p-12 rounded-[2.5rem] reveal flex flex-col md:flex-row items-center gap-8">
+                <div class="text-center md:text-left">
+                    <h3 class="text-3xl font-display font-bold mb-4">5.0 Estrelas</h3>
+                    <p class="text-white/40 text-sm">Satisfação máxima garantida. Atendimento rápido, humanizado e focado na sua agilidade.</p>
+                </div>
+                <div class="flex-1 border-l border-white/10 pl-8 hidden md:block">
+                    <div class="bg-white/5 p-6 rounded-2xl italic text-xs text-white/60">
+                        "Profissionalismo impecável na criação do nosso site. Superou todas as expectativas."
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section id="servicos" class="py-32 bg-[#080808]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-24 gap-10">
+                <div class="max-w-2xl">
+                    <h2 class="text-4xl md:text-6xl font-display font-bold mb-8 reveal">Nossas <span class="text-white/40">Soluções.</span></h2>
+                    <p class="text-white/50 text-lg reveal">Desenvolvimento completo da sua presença digital.</p>
+                </div>
+                <a href="https://wa.me/5534991775379" class="reveal border-b-2 border-white/20 pb-2 text-sm font-bold uppercase tracking-widest hover:border-white transition">Solicitar Orçamento</a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="group reveal">
+                    <div class="aspect-[4/5] overflow-hidden rounded-[2rem] mb-8 bg-zinc-900">
+                        <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition duration-700" alt="Delivery">
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Sites & Delivery</h3>
+                    <p class="text-white/40 text-sm">Páginas modernas para restaurantes e comércios locais com cardápio digital.</p>
+                </div>
+                <div class="group reveal">
+                    <div class="aspect-[4/5] overflow-hidden rounded-[2rem] mb-8 bg-zinc-900">
+                        <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition duration-700" alt="Branding">
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Identidade Visual</h3>
+                    <p class="text-white/40 text-sm">Logotipos e artes para redes sociais que elevam o valor percebido da sua marca.</p>
+                </div>
+                <div class="group reveal">
+                    <div class="aspect-[4/5] overflow-hidden rounded-[2rem] mb-8 bg-zinc-900">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition duration-700" alt="Vendas">
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Páginas de Vendas</h3>
+                    <p class="text-white/40 text-sm">Landing pages otimizadas para anúncios no Instagram e Google Ads.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contato" class="py-24 px-6 border-t border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-20">
+                <div>
+                    <h2 class="text-5xl font-display font-extrabold mb-8 tracking-tighter italic">JSA DIGITAL</h2>
+                    <p class="text-white/40 mb-12 text-lg leading-relaxed max-w-md">Transformando empresas de Patos de Minas e região através de design estratégico e tecnologia.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <span class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-xs">📍</span>
+                            <span class="text-sm text-white/60">R. Tobias Cândido, 345 - Centro, Patos de Minas - MG</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <span class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-xs">📞</span>
+                            <span class="text-sm text-white/60">(34) 99177-5379</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col justify-end items-start md:items-end">
+                    <p class="text-[10px] font-bold uppercase tracking-[0.4em] text-white/30 mb-6">Pronto para começar?</p>
+                    <a href="https://wa.me/5534991775379" class="text-3xl md:text-5xl font-display font-bold hover:text-white/60 transition mb-10 text-right">Fale conosco no <br> WhatsApp →</a>
+                </div>
+            </div>
+            
+            <div class="mt-32 pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between gap-6">
+                <span class="text-[10px] font-bold uppercase tracking-widest text-white/20">© 2026 JSA DIGITAL - Todos os direitos reservados.</span>
+                <div class="flex gap-10">
+                    <a href="#" class="text-[10px] font-bold uppercase tracking-widest text-white/20 hover:text-white transition">Instagram</a>
+                    <a href="#" class="text-[10px] font-bold uppercase tracking-widest text-white/20 hover:text-white transition">Google Profile</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Hero Animation
+        gsap.from(".reveal-hero", {
+            duration: 1.5,
+            y: 80,
+            opacity: 0,
+            stagger: 0.2,
+            ease: "power4.out",
+            delay: 0.3
+        });
+
+        // Scroll Reveal
+        const reveals = document.querySelectorAll('.reveal');
+        reveals.forEach(el => {
+            gsap.from(el, {
+                scrollTrigger: {
+                    trigger: el,
+                    start: "top 90%",
+                },
+                duration: 1.2,
+                y: 50,
+                opacity: 0,
+                ease: "power3.out"
+            });
+        });
+
+        // Marquee Animation
+        gsap.to(".animate-marquee", {
+            xPercent: -50,
+            repeat: -1,
+            duration: 20,
+            ease: "none"
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
